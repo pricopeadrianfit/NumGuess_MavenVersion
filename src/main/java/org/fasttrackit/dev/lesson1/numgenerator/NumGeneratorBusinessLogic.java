@@ -29,6 +29,7 @@ public class NumGeneratorBusinessLogic {
     long start;
     long finish;
     double elapsedTime;
+    int i;
 
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
@@ -59,6 +60,8 @@ public class NumGeneratorBusinessLogic {
         long start =0;
         long finish;
         hint = "";
+        elapsedTime=0;
+
     }
 
     public boolean determineGuess(int guessNumber ){
@@ -69,19 +72,21 @@ public class NumGeneratorBusinessLogic {
           start=System.currentTimeMillis();
         }
         numberOfGuesses++;
-        if (guessNumber == generatedNumber) {
-            hint="";
-            successfulGuess = true;
-            finish=System.currentTimeMillis();
-            elapsedTime=(finish-start)/1000.0;
-        } else if (guessNumber < generatedNumber) {
-            hint = "higher";
-            successfulGuess = false;
-        } else if (guessNumber > generatedNumber) {
-            hint = "lower";
-            successfulGuess = false;
-        }
-        return successfulGuess;
+
+            if (guessNumber == generatedNumber) {
+                hint = "";
+                successfulGuess = true;
+                finish = System.currentTimeMillis();
+                elapsedTime = (finish - start) / 1000;
+            } else if (guessNumber < generatedNumber) {
+                hint = "higher";
+                successfulGuess = false;
+            } else if (guessNumber > generatedNumber) {
+                hint = "lower";
+                successfulGuess = false;
+            }
+            return successfulGuess;
+
     }
 
 
