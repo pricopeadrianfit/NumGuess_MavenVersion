@@ -1,5 +1,6 @@
 package org.fasttrackit.dev.lesson1.numgenerator.servlet;
 
+
 import org.fasttrackit.dev.lesson1.numgenerator.NumGeneratorBusinessLogic;
 
 import javax.servlet.http.HttpServlet;
@@ -8,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.SimpleTimeZone;
 
 /**
  * Created by condor on 29/11/14.
@@ -79,8 +83,10 @@ public class NumGenServlet extends HttpServlet {
                 String hint = nbl.getHint();
                 int nrGuesses = nbl.getNumGuesses();
                 double timer = nbl.getElapsedTime();
-                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyNrGuesses\":\"" + nrGuesses + "\", \"keyTimer\":\"" + timer + "\"}";
+                String serverTime=nbl.getServerTime();
 
+                jsonResponse = "{\"keySuccess\":\"" + success + "\", \"keyHint\":\"" + hint + "\", \"keyNrGuesses\":\"" + nrGuesses + "\", \"keyTimer\":\"" + timer + "\", \"actualDate\":\"" + serverTime + "\"}";
+                System.out.println(jsonResponse);
             } else {
                 jsonResponse = "{\"keyError\":\"WRONGNUMBERFORMAT\"}";
             }

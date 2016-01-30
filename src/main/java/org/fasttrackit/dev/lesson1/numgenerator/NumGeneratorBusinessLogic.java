@@ -1,6 +1,7 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -29,7 +30,8 @@ public class NumGeneratorBusinessLogic {
     long start;
     long finish;
     double elapsedTime;
-    int i;
+    SimpleDateFormat sdf;
+    String serverTime;
 
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
@@ -46,8 +48,13 @@ public class NumGeneratorBusinessLogic {
     public double getElapsedTime(){
         return elapsedTime;
     }
+
     public int getNumGuesses(){
         return numberOfGuesses;
+    }
+
+    public String getServerTime() {
+        return serverTime;
     }
 
     public boolean isFirstTime(){
@@ -62,6 +69,7 @@ public class NumGeneratorBusinessLogic {
         hint = "";
         elapsedTime=0;
 
+
     }
 
     public boolean determineGuess(int guessNumber ){
@@ -73,21 +81,26 @@ public class NumGeneratorBusinessLogic {
         }
         numberOfGuesses++;
 
-            if (guessNumber == generatedNumber) {
-                hint = "";
-                successfulGuess = true;
-                finish = System.currentTimeMillis();
-                elapsedTime = (finish - start) / 1000;
-            } else if (guessNumber < generatedNumber) {
-                hint = "higher";
-                successfulGuess = false;
-            } else if (guessNumber > generatedNumber) {
-                hint = "lower";
-                successfulGuess = false;
-            }
-            return successfulGuess;
+
+    if (guessNumber == generatedNumber) {
+        hint = "";
+        successfulGuess = true;
+        finish = System.currentTimeMillis();
+        elapsedTime = (finish - start) / 1000;
+
+        Calendar cal = Calendar.getInstance();
+        sdf = new SimpleDateFormat("HH:mm");
+       serverTime= sdf.format(cal.getTime());
+
+    } else if (guessNumber < generatedNumber) {
+        hint = "higher";
+        successfulGuess = false;
+    } else if (guessNumber > generatedNumber) {
+        hint = "lower";
+        successfulGuess = false;
+    }
+    return successfulGuess;
 
     }
-
 
 }
