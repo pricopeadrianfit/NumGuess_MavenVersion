@@ -8,8 +8,8 @@ version 1.0
 
 
 body {
-    background-color: #4dff4f;
-    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-image:url(party3.jpg);
+    background-repeat:repeat-x;    font-family: Verdana, Helvetica, Arial, sans-serif;
     line-height: 125%;
     padding: 0;
     margin: 0;
@@ -18,7 +18,7 @@ body {
 
 h1 {
     font-size: large;
-    background-color: cornflowerblue;
+    background-color: #7a0610;
     color: white;
     padding-top: 2em;
     padding-bottom: .2em;
@@ -27,11 +27,12 @@ h1 {
 }
 
 #tagline p {
-    font-style: italic;
-    font-family: Georgia, Times, serif;
-    background-color: #bed8f3;
-    border-top: 3px solid #7da5d8;
-    border-bottom: 3px solid #7da5d8;
+    font-style: Italic;
+    font-family: sans-serif;
+    color: #fbfff6;
+    background-color: #800610;
+    border-top: 3px solid #52060e;
+    border-bottom: 3px solid #7a0610;
     padding-top: .2em;
     padding-bottom: .2em;
     padding-left: .8em;
@@ -40,7 +41,7 @@ h1 {
 
 #header {
     position: absolute;
-    border-top: 3px solid #7da5d8;
+    border-top: 3px solid #7a0610;
     width: 100%;
 
 }
@@ -50,15 +51,18 @@ h1 {
     top: 110px;
     width: 110px;
     height: 180px;
-    background-color: navajowhite;
-    color:black;
+    text-decoration: none;
+    background-color: #52060e;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+    color: #800610;
     padding-left: .8em;
-;
+
 }
 
 #bodycontent {
     position: absolute;
-    left: 140px;
+    left: 100px;
     top: 120px;
     padding-top:.4em;
     padding-left:2em;
@@ -70,27 +74,42 @@ h1 {
     top: 110px;
     width: 120px;
     height:180px;
-    background-color: navajowhite;
-    color:black;
+    text-decoration: none;
+    background-color: #7a0610;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+    color: white;
     padding-left: .8em;
-;
+
 }
 
+a:link {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
 #serverResponse {
-    color:red;
+
     position: absolute;
     top: 210px;
     left: 140px;
     width: 200px;
-    background-color: floralwhite;
-    color: blue;
+    background: whitesmoke;
+    filter: alpha(opacity=60);
+    opacity: 0.8;
+    color: #000000;
     padding-left: .8em;
 
 }
 
 label {
-    background-color: #fff2e7;
-    color: black;
+
+    color: #deffdf;
     font-weight: bold;
     padding: 4px;
     text-transform: uppercase;
