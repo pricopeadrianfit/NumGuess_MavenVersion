@@ -52,7 +52,7 @@
                  else
                  if(keySuccess=="true")
                  {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses." + "  Your time was " + keyTimer + "  seconds. " + "  Number was guessed at  " + sdf + "  hours" ;
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses." + "  Your time was " + keyTimer + "  seconds. " + "  Number was guessed at local hour " + sdf ;
                  }
              }
          }
