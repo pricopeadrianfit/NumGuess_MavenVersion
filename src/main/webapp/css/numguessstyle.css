@@ -5,8 +5,10 @@ FastTrackIT 2015,
 version 1.0
 */
 
+
+
 body {
-    background-color:floralwhite;
+    background-color: #4dff4f;
     font-family: Verdana, Helvetica, Arial, sans-serif;
     line-height: 125%;
     padding: 0;
@@ -40,6 +42,7 @@ h1 {
     position: absolute;
     border-top: 3px solid #7da5d8;
     width: 100%;
+
 }
 
 #navigation {
@@ -84,11 +87,6 @@ h1 {
     padding-left: .8em;
 
 }
-
-
-
-
-
 
 
 
