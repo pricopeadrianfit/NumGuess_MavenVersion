@@ -51,7 +51,7 @@
                  else
                  if(keySuccess=="true")
                  {
-                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses." + "Your time was " + keyTimer + "seconds" ;
+                     document.getElementById("serverResponse").innerHTML = "Congrats, you guessed the number " + document.getElementById("number").value + " after " + keyNrGuesses + " guesses." + "Your time was " + keyTimer + "  seconds" ;
                  }
              }
          }
