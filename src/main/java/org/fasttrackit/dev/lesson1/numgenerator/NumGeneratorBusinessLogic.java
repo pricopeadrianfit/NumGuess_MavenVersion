@@ -55,6 +55,7 @@ public class NumGeneratorBusinessLogic {
 
     public String getServerTime() {
         return serverTime;
+
     }
 
     public boolean isFirstTime(){
