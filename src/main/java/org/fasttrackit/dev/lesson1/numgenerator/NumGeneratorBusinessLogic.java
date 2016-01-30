@@ -1,5 +1,8 @@
 package org.fasttrackit.dev.lesson1.numgenerator;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by condor on 29/11/14.
  * FastTrackIT, 2015
@@ -23,6 +26,9 @@ public class NumGeneratorBusinessLogic {
     private int numberOfGuesses;
     private int generatedNumber;
     private String hint;
+    long start;
+    long finish;
+    double elapsedTime;
 
     public NumGeneratorBusinessLogic(){
         resetNumberGenerator();
@@ -36,6 +42,9 @@ public class NumGeneratorBusinessLogic {
         return hint;
     }
 
+    public double getElapsedTime(){
+        return elapsedTime;
+    }
     public int getNumGuesses(){
         return numberOfGuesses;
     }
@@ -47,19 +56,24 @@ public class NumGeneratorBusinessLogic {
     public void resetNumberGenerator(){
         isFirstTime = true;
         numberOfGuesses = 0;
+        long start =0;
+        long finish;
         hint = "";
     }
 
-    public boolean determineGuess(int guessNumber){
+    public boolean determineGuess(int guessNumber ){
         if (isFirstTime) {
             generatedNumber = NumGenerator.generate(MAX_NUMBER);
             System.out.println("gennr:"+generatedNumber);
             isFirstTime = false;
+          start=System.currentTimeMillis();
         }
         numberOfGuesses++;
         if (guessNumber == generatedNumber) {
             hint="";
             successfulGuess = true;
+            finish=System.currentTimeMillis();
+            elapsedTime=(finish-start)/1000.0;
         } else if (guessNumber < generatedNumber) {
             hint = "higher";
             successfulGuess = false;
